@@ -1,0 +1,64 @@
+{
+  "name": "telechrome",
+  "version": "1.0.0",
+  "shortVersion": "1.0",
+  "description": "A telegram client for chromebooks. Built with electron.js ",
+  "homepage": "https://github.com/Psycho649/Telechrome/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron .",
+    "dist": "electron-builder build -l"
+  },
+  "keywords": [],
+  "author": "Blockydablocks <yasogan6@gmail.com> (https://yasogan.ml/)",
+  "license": "CC-BY-NC-ND-4.0",
+  "devDependencies": {
+    "electron": "^18.2.2",
+    "electron-builder": "^23.0.3"
+  },
+  "bugs": {
+    "url": "https://github.com/Psycho649/Telechrome/issues",
+    "email": "yasogan6@gmail.com"
+  },
+  "private": true,
+  "build": {
+    "appId": "com.blockydablocks.telechrome",
+    "productName": "Telechrome",
+    "artifactName": "${productName}-setup-${shortVersion}-${arch}.${ext}",
+    "copyright": "Copyright © 2022+ Blockydablocks",
+    "asar": true,
+    "compression": "maximum",
+    "files": [
+      "!{dist,.gitignore,.vscode}"
+    ],
+    "linux": {
+      "icon": "build/icon.png",
+      "target": [
+        {
+          "target": "apk",
+          "arch": [
+            "arm64",
+            "armv7l"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "arm64",
+            "armv7l"
+          ]
+          
+        }
+      ],
+      "maintainer": "Blockydablocks",
+      "vendor": "Blockydablocks",
+      "synopsis": "A Telegram client for Chromebooks",
+      "category": "Network"
+    },
+    "directories": {
+      "buildResources": "build",
+      "output": "dist"
+    }
+  }
+}
